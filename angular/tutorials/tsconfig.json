@@ -5,6 +5,14 @@
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "strict": true,
+    "paths": {
+      "identity.abstractions": [
+        "./dist/identity.abstractions"
+      ],
+      "identity.worker": [
+        "./dist/identity.worker"
+      ]
+    },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

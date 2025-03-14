@@ -3,5 +3,64 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "identity.worker": {
+      "projectType": "library",
+      "root": "projects/identity.worker",
+      "sourceRoot": "projects/identity.worker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/identity.worker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/identity.worker/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/identity.worker/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/identity.worker/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "identity.abstractions": {
+      "projectType": "library",
+      "root": "projects/identity.abstractions",
+      "sourceRoot": "projects/identity.abstractions/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/identity.abstractions/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/identity.abstractions/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/identity.abstractions/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }

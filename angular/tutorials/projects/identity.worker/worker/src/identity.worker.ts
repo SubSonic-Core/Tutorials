@@ -1,3 +1,5 @@
+/// <reference lib="WebWorker" />
+
 import { IIdentityOptions, IWorkerMessage, IWorkerResponse, MessageType } from "identity.abstractions";
 
 export namespace identity {
